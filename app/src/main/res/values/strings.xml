@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hiking trails</string>
+
+    <string name="title">Hiking trails</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_advanced">Advanced</string>
+    <string name="menu_intermediate">Intermediate</string>
+    <string name="menu_beginner">Beginner</string>
+</resources>

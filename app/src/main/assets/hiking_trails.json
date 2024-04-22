@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Angels Landing Trail",
+    "description": "Proceed cautiously on this 6.9-km out-and-back trail near Springdale, Utah. Generally considered a highly challenging route, it should only be attempted by experienced adventurers. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are March through October.",
+    "img": "angles_landing",
+    "difficulty": "advanced",
+    "stages": ["Start of the Trail", "River Access", "First set of Switchbacks", "Second set of switchbacks", "Scout Lookout, Restrooms and Decision Point", "Chains section", "Angels Landing"]
+  },
+  {
+    "name": "Vernal and Nevada Falls via Mist Trail",
+    "description": "Check out this 9.2-km loop trail near Paradise, Washington. Generally considered a challenging route, it takes an average of 3 h 30 min to complete. This is a very popular area for hiking and running, so you'll likely encounter other people while exploring. The best times to visit this trail are June through September.",
+    "img": "vernal_and_nevada",
+    "difficulty": "advanced",
+    "stages": ["Happy Isles Trailhead", "Footbridge", "Vernal Fall", "Emerald Pool", "Nevada Fall", "The John Muir Trail"]
+  },
+  {
+    "name": "Sky Pond via Glacier Gorge Trail",
+    "description": "Experience this 13.8-km out-and-back trail near Estes Park, Colorado. Generally considered a challenging route. This is a very popular area for backpacking, camping, and fishing, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+    "img": "sky_pond",
+    "difficulty": "advanced",
+    "stages": ["Trail Junction to Andrew's Glacier and Tarn", "Bear Lake/Glacier Gorge Split", "Sky pond", "Alberta Falls", "Boulder field Junction", "Lake hayaha"]
+  },
+  {
+    "name": "Upper Yosemite Falls Trail",
+    "description": "Discover this 10.6-km out-and-back trail near Yosemite Valley, California. Generally considered a challenging route, it takes an average of 5 h 21 min to complete. This is a very popular area for backpacking, camping, and hiking, so you'll likely encounter other people while exploring.",
+    "img": "upper_yosemite",
+    "difficulty": "advanced",
+    "stages": ["Trailhead at Camp 4", "Columbia Rock", "Lower Gate", "Upper Gate", "Upper Yosemite Fall Overlook"]
+  },
+  {
+    "name": "Mount Storm King",
+    "description": "Proceed cautiously on this 6.6-km out-and-back trail near Port Angeles, Washington. Generally considered a highly challenging route, it should only be attempted by experienced adventurers. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are April through October.",
+    "img": "mount_storm_king",
+    "difficulty": "advanced",
+    "stages": ["Junction", "Crescent Lake Viewpoint", "End of maintained trail"]
+  },
+  {
+    "name": "The Beehive Loop Trail",
+    "description": "Get to know this 2.4-km loop trail near Bar Harbor, Maine. Generally considered a challenging route. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are May through October.",
+    "img": "the_beehive",
+    "difficulty": "advanced",
+    "stages": ["Parking", "The Bee Hive Trailhead", "Trail Junction", "Summit of the Beehive", "Bowl Connector Trail", "The Bowl"]
+  },
+  {
+    "name": "Navajo Loop and Queens Garden Trail",
+    "description": "Discover this 4.8-km loop trail near Bryce, Utah. Generally considered a moderately challenging route, it takes an average of 1 h 33 min to complete. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are March through October.",
+    "img": "navajo_loop",
+    "difficulty": "intermediate",
+    "stages": ["Sunset Point", "Parking", "Wall Street", "Thor's Hammer", "Two Bridges", "Queen Victoria", "Queens Garden Trail", "The Queen Victoria Hoodoo", "A Hole In The Wall", "In The Garden", "A Hoodoo", "The Horse Trail", "A View Into Queen's Garden From the Top", "Queens Garden", "A Beautiful Turn", "Sunrise Point"]
+  },
+  {
+    "name": "Rattlesnake Ledge Trail",
+    "description": "Head out on this 8.5-km out-and-back trail near North Bend, Washington. Generally considered a moderately challenging route, it takes an average of 3 h 4 min to complete. This is a very popular area for hiking and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+    "img": "rattlesnake_ledge",
+    "difficulty": "intermediate",
+    "stages": ["Rattlesnake Lake", "Rattlesnake Ridge Trailhead Marker", "Access Trail Road", "Viewpoint 1", "Clearing Along the Trail", "Wooden Bridge", "Overlook Trail Marker", "Rattlesnake Ledge Tier 1", "Rattlesnake Upper Ledge"]
+  },
+  {
+    "name": "Trail of Ten Falls",
+    "description": "Explore this 11.9-km loop trail near Mehama, Oregon. Generally considered a moderately challenging route, it takes an average of 3 h 21 min to complete. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are May through October.",
+    "img": "ten_falls",
+    "difficulty": "intermediate",
+    "stages": ["Cafe - Gift Shop - Trailhead", "South Falls", "Lower South Falls", "Lower North Falls", "Double Falls", "Drake Falls", "Middle North Falls", "Twin Falls", "North Falls", "Upper North Falls", "Winter Falls"]
+  },
+  {
+    "name": "Avalanche Lake",
+    "description": "Enjoy this 9.5-km out-and-back trail near Lake Mc Donald, Montana. Generally considered a moderately challenging route, it takes an average of 2 h 28 min to complete. This is a very popular area for camping and hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are June through October.",
+    "img": "avalanche",
+    "difficulty": "intermediate",
+    "stages": ["Parking", "Avalanche Creek Views", "Avalanche Gorge", "Pit Toilet", "Boardwalk Through The Woods"]
+  },
+  {
+    "name": "Delicate Arch Trail",
+    "description": "Experience this 5.1-km out-and-back trail near Moab, Utah. Generally considered a moderately challenging route, it takes an average of 1 h 35 min to complete. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime",
+    "img": "delicate_arch",
+    "difficulty": "intermediate",
+    "stages": ["Parking and Trailhead", "Trail Junction to Petroglyphs Loop", "Climbing the Slickrock Slab", "On top of the Slickrock", "Delicate Arch"]
+  },
+  {
+    "name": "Lake Haiyaha",
+    "description": "Try this 6.4-km out-and-back trail near Estes Park, Colorado. Generally considered a moderately challenging route, it takes an average of 2 h 2 min to complete. This is a very popular area for fishing and hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are June through October.",
+    "img": "lake_haiyaha",
+    "difficulty": "intermediate",
+    "stages": ["Nymph Lake", "Dream Lake", "Lake Haiyaha"]
+  },
+  {
+    "name": "Lower Yosemite Falls Trail",
+    "description": "Discover this 1.9-km loop trail near Yosemite Valley, California. Generally considered an easy route, it takes an average of 24 min to complete. This is a very popular area for walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+    "img": "lower_yosemite",
+    "difficulty": "beginner",
+    "stages": ["Restrooms", "Lower Yosemite Falls"]
+  },
+  {
+    "name": "Jordan Pond Path",
+    "description": "Head out on this 5.0-km loop trail near Mount Desert, Maine. Generally considered an easy route, it takes an average of 55 min to complete. This is a very popular area for birding, hiking, and running, so you'll likely encounter other people while exploring. The best times to visit this trail are April through October.",
+    "img": "jordan_pond",
+    "difficulty": "beginner",
+    "stages": ["Bridge", "Small Beach", "Bathroom", "Pond House"]
+  },
+  {
+    "name": "Zion Canyon Overlook Trail",
+    "description": "Explore this 1.4-km out-and-back trail near Springdale, Utah. Generally considered an easy route, it takes an average of 25 min to complete. This is a very popular area for hiking and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+    "img": "zion_canyon",
+    "difficulty": "beginner",
+    "stages": ["Alternate Parking", "Trailhead", "Cave", "Overlook"]
+  },
+  {
+    "name": "Lower Emerald Pool Trail",
+    "description": "Discover this 2.3-km out-and-back trail near Springdale, Utah. Generally considered an easy route, it takes an average of 32 min to complete. This is a very popular area for hiking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. ",
+    "img": "lower_emerald",
+    "difficulty": "beginner",
+    "stages": ["Waterfall overlook", "Middle pool", "Lower Emerald Lookout"]
+  },
+  {
+    "name": "Endless Wall Trail",
+    "description": "Discover this 5.1-km loop trail near Lansing, West Virginia. Generally considered an easy route, it takes an average of 1 h 15 min to complete. This is a very popular area for hiking and rock climbing, so you'll likely encounter other people while exploring. The best times to visit this trail are April through October.",
+    "img": "endless_wall",
+    "difficulty": "beginner",
+    "stages": ["Diamond Point Overlook", "Fern Creek Overlook", "Fern Creek Bathroom", "Miners Ladder", "Little overlook", "Rock climbing", "Fern Butress Ladder"]
+  },
+  {
+    "name": "Sol Duc Falls Trail",
+    "description": "Experience this 2.6-km out-and-back trail near Joyce, Washington. Generally considered an easy route, it takes an average of 42 min to complete. This is a very popular area for backpacking, camping, and hiking, so you'll likely encounter other people while exploring. The best times to visit this trail are May through October.",
+    "img": "sol_duc",
+    "difficulty": "beginner",
+    "stages": ["Trail Junction", "Canyon Creek Shelter", "Sol Duc Falls", "Campsites"]
+  }
+]
