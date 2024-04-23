@@ -12,11 +12,11 @@ import edu.put.myapplication.DetailActivity
 import edu.put.myapplication.TRAIL_ID_EXTRA
 import edu.put.myapplication.Trail
 import edu.put.myapplication.TrailClickListener
-import edu.put.myapplication.databinding.FragmentAdvancedBinding
+import edu.put.myapplication.databinding.FragmentGridBinding
 import edu.put.myapplication.trailList
 
 class AdvancedFragment : Fragment(), TrailClickListener {
-    private lateinit var binding: FragmentAdvancedBinding
+    private lateinit var binding: FragmentGridBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,12 +24,12 @@ class AdvancedFragment : Fragment(), TrailClickListener {
         savedInstanceState: Bundle?
 
     ): View {
-        binding = FragmentAdvancedBinding.inflate(layoutInflater)
+        binding = FragmentGridBinding.inflate(layoutInflater)
         val advancedActivity = this
         binding.recyclerView.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             val viewList = trailList.filter { trail ->
-                trail.difficulty == "advanced"
+                trail.difficulty == "Advanced"
             }
             adapter = CardAdapter(viewList, advancedActivity)
         }

@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Some Action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
@@ -75,3 +74,13 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
+// TODO
+// 1. Do szczegółu dodać czas przejscia poszczególnych odcinków szlaku w zaleznosci od stylu chodzenia
+// 2. Wersja na tablet
+// 3. Stoper we fragmencie, działa po zminimalizowaniu aplikacji. Dodac ikony do start stop,
+// zapamietanie wynikow i mozliwosc wglądu w nie.
+// 4. Dark theme
+// 5. Zmiana orientacji
+// 7. Przesuwanie pomiedzy szlakami strzałkami w prawo i lewo
+// 8. Wyszukiwanie szlaku w pasku narzędzi
+// 9. Animacje

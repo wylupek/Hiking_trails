@@ -1,9 +1,9 @@
 package edu.put.myapplication
 
-import android.R
-import androidx.appcompat.app.AppCompatActivity
+import android.R.layout.simple_list_item_1
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import edu.put.myapplication.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -13,14 +13,15 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        this.supportActionBar?.hide()
         val trailId = intent.getIntExtra(TRAIL_ID_EXTRA, -1)
         val trail = trailFromId(trailId)
         if(trail != null) {
+            binding.toolbar.title= trail.difficulty
             binding.trailImg.setImageResource(trail.imgId)
             binding.trailName.text = trail.name
             binding.description.text = trail.description
-            binding.stages.adapter =  ArrayAdapter(this, R.layout.simple_list_item_1, trail.stages)
+            binding.stages.adapter =  ArrayAdapter(this, simple_list_item_1, trail.stages)
         }
     }
 
