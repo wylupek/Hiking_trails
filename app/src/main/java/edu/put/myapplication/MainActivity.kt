@@ -81,6 +81,5 @@ class MainActivity : AppCompatActivity() {
 // zapamietanie wynikow i mozliwosc wglądu w nie.
 // 4. Dark theme
 // 5. Zmiana orientacji
-// 7. Przesuwanie pomiedzy szlakami gestami
-// 8. Wyszukiwanie szlaku w pasku narzędzi
-// 9. Animacje
+// 6. Wyszukiwanie szlaku w pasku narzędzi
+// 7. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
