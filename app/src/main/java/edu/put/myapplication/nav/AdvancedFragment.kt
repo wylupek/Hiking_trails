@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import edu.put.myapplication.CardAdapter
 import edu.put.myapplication.DetailActivity
+import edu.put.myapplication.PARENT
 import edu.put.myapplication.TRAIL_ID_EXTRA
 import edu.put.myapplication.Trail
 import edu.put.myapplication.TrailClickListener
@@ -39,6 +40,7 @@ class AdvancedFragment : Fragment(), TrailClickListener {
     override fun onClick(trail: Trail) {
         val intent = Intent(requireContext(), DetailActivity::class.java)
         intent.putExtra(TRAIL_ID_EXTRA, trail.id)
+        intent.putExtra(PARENT, "Advanced")
         startActivity(intent)
     }
 }

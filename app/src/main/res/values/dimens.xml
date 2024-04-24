@@ -8,4 +8,8 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="font_header">40sp</dimen>
+
+    <dimen name="swipe_bar_arrow_margin_side">30dp</dimen>
+    <dimen name="swipe_bar_margin_bottom">20dp</dimen>
+    <dimen name="swipe_bar_font_size">20sp</dimen>
 </resources>

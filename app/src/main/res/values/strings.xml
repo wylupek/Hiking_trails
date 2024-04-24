@@ -6,4 +6,5 @@
     <string name="menu_advanced">Advanced</string>
     <string name="menu_intermediate">Intermediate</string>
     <string name="menu_beginner">Beginner</string>
+    <string name="swipe_bar">Swipe to next trail</string>
 </resources>
