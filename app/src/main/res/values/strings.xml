@@ -6,5 +6,7 @@
     <string name="menu_advanced">Advanced</string>
     <string name="menu_intermediate">Intermediate</string>
     <string name="menu_beginner">Beginner</string>
+    <string name="menu_timer">Timer</string>
     <string name="swipe_bar">Swipe to next trail</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

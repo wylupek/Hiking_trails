@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_advanced, R.id.nav_intermediate, R.id.nav_beginner, R.id.nav_home
+                R.id.nav_advanced, R.id.nav_intermediate, R.id.nav_beginner, R.id.nav_home, R.id.nav_timer
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -80,6 +80,6 @@ class MainActivity : AppCompatActivity() {
 // 3. Stoper we fragmencie, działa po zminimalizowaniu aplikacji. Dodac ikony do start stop,
 // zapamietanie wynikow i mozliwosc wglądu w nie.
 // 4. Dark theme
-// 5. Zmiana orientacji
-// 6. Wyszukiwanie szlaku w pasku narzędzi
-// 7. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
+// 5. Wyszukiwanie szlaku w pasku narzędzi
+// 6. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
+// 7. Aparat

@@ -20,5 +20,9 @@
             android:id="@+id/nav_beginner"
             android:icon="@drawable/ic_menu_beginner"
             android:title="@string/menu_beginner" />
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@drawable/ic_timer"
+            android:title="@string/menu_timer" />
     </group>
 </menu>
