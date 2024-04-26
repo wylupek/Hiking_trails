@@ -80,6 +80,5 @@ class MainActivity : AppCompatActivity() {
 // 3. Stoper we fragmencie, działa po zminimalizowaniu aplikacji. Dodac ikony do start stop,
 // zapamietanie wynikow i mozliwosc wglądu w nie.
 // 4. Dark theme
-// 5. Wyszukiwanie szlaku w pasku narzędzi
-// 6. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
-// 7. Aparat
+// 5. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
+// 6. Aparat

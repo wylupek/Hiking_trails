@@ -1,6 +1,7 @@
 package edu.put.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
                 val newId = findPreviousTrailId(trailId)
                 if (newId != null && newId != trailId) {
                     generateTrailView(trailList[newId])
-                    trailId -= 1
+                    trailId = newId
                 }
             }
         }
@@ -40,11 +41,10 @@ class DetailActivity : AppCompatActivity() {
                 val newId = findNextTrailId(trailId)
                 if (newId != null && newId != trailId) {
                     generateTrailView(trailList[newId])
-                    trailId += 1
+                    trailId = newId
                 }
             }
         }
-
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
@@ -57,41 +57,35 @@ class DetailActivity : AppCompatActivity() {
     }
     private fun findNextTrailId(currentId: Int): Int? {
         val category = intent.getStringExtra(PARENT)
-        if (category == "Home") {
-            return if (currentId < trailList.size - 1) {
-                currentId + 1
-            } else {
-                null
-            }
-        }
+        val searchQuery = intent.getStringExtra(SEARCH_QUERY)
 
-        for (i in currentId + 1 until trailList.size) {
-            val trail = trailList[i]
-            if (trail.difficulty == category) {
-                return trail.id
+        return trailList.firstOrNull { trail ->
+            if (category == "Home") {
+                searchQuery?.let { trail.name.contains(it, ignoreCase = true) } ?: true &&
+                        trail.id != null && trail.id > currentId
+            } else {
+                searchQuery?.let { trail.name.contains(it, ignoreCase = true) } ?: true &&
+                        trail.difficulty == category &&
+                        trail.id != null && trail.id > currentId
             }
-        }
-        return null
+        }?.id
     }
 
     private fun findPreviousTrailId(currentId: Int): Int? {
         val category = intent.getStringExtra(PARENT)
-        if (category == "Home") {
-            return if (currentId > 0) {
-                currentId - 1
+        val searchQuery = intent.getStringExtra(SEARCH_QUERY)
+        return trailList.lastOrNull { trail ->
+            if (category == "Home") {
+                searchQuery?.let { trail.name.contains(it, ignoreCase = true) } ?: true &&
+                        trail.id != null && trail.id < currentId
             } else {
-                null
+                trail.difficulty == category &&
+                        searchQuery?.let { trail.name.contains(it, ignoreCase = true) } ?: true &&
+                        trail.id != null && trail.id < currentId
             }
-        }
-
-        for (i in currentId - 1 downTo 0) {
-            val trail = trailList[i]
-            if (trail.difficulty == category) {
-                return trail.id
-            }
-        }
-        return null
+        }?.id
     }
+
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         super.dispatchTouchEvent(ev)
         if (ev == null) {
@@ -141,7 +135,7 @@ class DetailActivity : AppCompatActivity() {
             val newId = findNextTrailId(trailId)
             if (newId != null && newId != trailId) {
                 generateTrailView(trailList[newId])
-                trailId += 1
+                trailId = newId
             }
         }
     }
@@ -151,7 +145,7 @@ class DetailActivity : AppCompatActivity() {
             val newId = findPreviousTrailId(trailId)
             if (newId != null && newId != trailId) {
                 generateTrailView(trailList[newId])
-                trailId -= 1
+                trailId = newId
             }
         }
     }
