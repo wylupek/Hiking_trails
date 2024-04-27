@@ -54,6 +54,18 @@
             android:textColor="@color/black"
             android:textSize="16sp" />
 
+        <Button
+            android:id="@+id/paceButton"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="Slow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.814" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/stages"
             android:layout_width="match_parent"

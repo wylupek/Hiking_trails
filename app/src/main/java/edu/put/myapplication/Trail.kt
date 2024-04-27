@@ -13,5 +13,7 @@ class Trail (
     var imgId: Int,
     var difficulty: String,
     var stages: List<String>,
+    var distances: List<Int>,
+    var distance: Int = distances.sum(),
     val id: Int? = trailList.size
 )

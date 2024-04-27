@@ -1,5 +1,7 @@
 package edu.put.myapplication
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
@@ -13,6 +15,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var detector: GestureDetector
     private var trailId = 0
+    private var button_state = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         trailId = intent.getIntExtra(TRAIL_ID_EXTRA, -1)
@@ -24,6 +27,25 @@ class DetailActivity : AppCompatActivity() {
         detector = GestureDetector(this, GestureListener())
         generateTrailView(trail)
 
+        binding.detailItem.paceButton.setOnClickListener() {
+            when (button_state) {
+                0 -> {
+                    binding.detailItem.paceButton.text = "Average"
+                    binding.detailItem.paceButton.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
+                    button_state = 1
+                }
+                1 -> {
+                    binding.detailItem.paceButton.text = "Fast"
+                    binding.detailItem.paceButton.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
+                    button_state = 2
+                }
+                2 -> {
+                    binding.detailItem.paceButton.text = "Slow"
+                    binding.detailItem.paceButton.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
+                    button_state = 0
+                }
+            }
+        }
 
 
         binding.swipeLeft.setOnClickListener {
