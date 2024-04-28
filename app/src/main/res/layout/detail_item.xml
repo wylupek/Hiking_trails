@@ -54,23 +54,24 @@
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/paceButton"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:text="Slow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.814" />
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/paceButton"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:layout_marginTop="10dp"
+                android:text="@string/pace_slow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/stages"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/black"

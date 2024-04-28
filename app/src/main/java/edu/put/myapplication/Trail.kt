@@ -5,6 +5,7 @@ var trailList = mutableListOf<Trail>()
 val TRAIL_ID_EXTRA = "trailExtra"
 val PARENT = "parent"
 val SEARCH_QUERY = ""
+var PACE = "Slow"
 
 class Trail (
     var name: String,

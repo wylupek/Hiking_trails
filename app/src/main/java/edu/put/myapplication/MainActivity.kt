@@ -74,10 +74,9 @@ class MainActivity : AppCompatActivity() {
     }
 }
 // TODO
-// 1. Do szczegółu dodać czas przejscia poszczególnych odcinków szlaku w zaleznosci od stylu chodzenia
-// 2. Wersja na tablet
-// 3. Stoper we fragmencie, działa po zminimalizowaniu aplikacji. Dodac ikony do start stop,
+// 1. Wersja na tablet
+// 2. Stoper we fragmencie, działa po zminimalizowaniu aplikacji. Dodac ikony do start stop,
 // zapamietanie wynikow i mozliwosc wglądu w nie.
-// 4. Dark theme
-// 5. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
-// 6. Aparat
+// 3. Dark theme
+// 4. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
+// 5. Aparat
