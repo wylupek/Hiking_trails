@@ -12,6 +12,7 @@
         app:cardCornerRadius="10dp"
         android:layout_margin="4dp"
         android:clickable="true"
+        app:cardBackgroundColor="@color/cardBackground"
         app:cardElevation="4dp">
 
         <LinearLayout
@@ -34,9 +35,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/app_name"
-                android:textColor="@color/black"
                 android:textSize="15sp"
-                android:lines="2"/>
+                android:lines="2" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

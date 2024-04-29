@@ -13,4 +13,6 @@
     <string name="pace_slow">slow</string>
     <string name="pace_average">average</string>
     <string name="pace_fast">fast</string>
+
+    <string name="dark_mode">Dark mode</string>
 </resources>

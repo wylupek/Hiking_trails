@@ -1,7 +1,9 @@
 package edu.put.myapplication
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import edu.put.myapplication.databinding.ActivityMainBinding
@@ -29,9 +32,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Some Action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.appBarMain.fab.setOnClickListener { _ ->
+            try {
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -43,6 +50,15 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        binding.darkModeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
     private fun populateTrails() {
@@ -75,8 +91,5 @@ class MainActivity : AppCompatActivity() {
 }
 // TODO
 // 1. Wersja na tablet
-// 2. Stoper we fragmencie, działa po zminimalizowaniu aplikacji. Dodac ikony do start stop,
-// zapamietanie wynikow i mozliwosc wglądu w nie.
-// 3. Dark theme
-// 4. Animacje strzałek albo Launch albo przechodzenia pomiedzy szlakami
-// 5. Aparat
+// 2. Dodac ikony do start stop, zapamietanie wynikow i mozliwosc wglądu w nie.
+// 3. Launch animacja

@@ -27,7 +27,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/swipe_bar_margin_bottom"
-        android:textColor="@color/black"
         android:text="@string/swipe_bar"
         android:textSize="@dimen/swipe_bar_font_size"/>
     <ImageView
