@@ -15,6 +15,7 @@ import edu.put.myapplication.SEARCH_QUERY
 import edu.put.myapplication.TRAIL_ID_EXTRA
 import edu.put.myapplication.Trail
 import edu.put.myapplication.TrailClickListener
+import edu.put.myapplication.UiUtils
 import edu.put.myapplication.databinding.FragmentGridBinding
 import edu.put.myapplication.trailList
 import java.util.Locale
@@ -29,9 +30,11 @@ class AdvancedFragment : Fragment(), TrailClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentGridBinding.inflate(layoutInflater)
+        val numberOfCards = UiUtils.getNumberOfCards(resources)
+
         val advancedActivity = this
         binding.recyclerView.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
+            layoutManager = GridLayoutManager(requireContext(), numberOfCards)
             val viewList = trailList.filter { trail ->
                 trail.difficulty == "Advanced"
             }
@@ -47,7 +50,7 @@ class AdvancedFragment : Fragment(), TrailClickListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 searchQuery = newText!!.lowercase(Locale.getDefault())
                 binding.recyclerView.apply {
-                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    layoutManager = GridLayoutManager(requireContext(), numberOfCards)
                     val viewList = trailList.filter { trail ->
                         trail.difficulty == "Advanced" &&
                         trail.name.contains(searchQuery, ignoreCase = true)
