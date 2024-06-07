@@ -93,4 +93,3 @@ class MainActivity : AppCompatActivity() {
 // 1. Wersja na tablet
 // 2. Dodac ikony do start stop, zapamietanie wynikow i mozliwosc wglądu w nie.
 //    https://www.youtube.com/watch?v=ahYUZ374j2k
-// 3. Launch animacja

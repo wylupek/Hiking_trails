@@ -5,6 +5,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
@@ -16,7 +18,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val query = ("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY, " +
                 NAME_COl + " TEXT," +
-                AGE_COL + " TEXT" + ")")
+                TIME_COL + " TEXT," +
+                DATE_COL + " TEXT" + ")")
 
         // we are calling sqlite
         // method for executing our query
@@ -30,7 +33,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
 
     // This method is for adding data in our database
-    fun addName(name : String, age : String ){
+    fun addTime(name: String, time: String) {
 
         // below we are creating
         // a content values variable
@@ -39,7 +42,12 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         // we are inserting our values
         // in the form of key-value pair
         values.put(NAME_COl, name)
-        values.put(AGE_COL, age)
+        values.put(TIME_COL, time)
+
+        // get the current date
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val date = dateFormat.format(Date())
+        values.put(DATE_COL, date)
 
         // here we are creating a
         // writable variable of
@@ -70,25 +78,28 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     }
 
-    companion object{
+    companion object {
         // here we have defined variables for our database
 
         // below is variable for database name
-        private val DATABASE_NAME = "GEEKS_FOR_GEEKS"
+        private const val DATABASE_NAME = "TRAILS"
 
         // below is the variable for database version
-        private val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
 
         // below is the variable for table name
-        val TABLE_NAME = "gfg_table"
+        const val TABLE_NAME = "trail_time"
 
         // below is the variable for id column
-        val ID_COL = "id"
+        const val ID_COL = "id"
 
         // below is the variable for name column
-        val NAME_COl = "name"
+        const val NAME_COl = "name"
 
-        // below is the variable for age column
-        val AGE_COL = "age"
+        // below is the variable for time column
+        const val TIME_COL = "time"
+
+        // below is the variable for date column
+        const val DATE_COL = "date"
     }
 }

@@ -1,79 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/idRLContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <AutoCompleteTextView
+        android:id="@+id/trailAutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select a trail"
+        android:completionThreshold="1"
+        android:inputType="text"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@android:color/transparent"
+        android:padding="10dp"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/elapsedTimeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:padding="10dp"
         android:text="00:00:00"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="85sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/startStopButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/elapsedTimeTextView"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="4dp"
-        android:text="Start Chronometer"
-        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/resetButton"
+    <LinearLayout
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/startStopButton"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="4dp"
-        android:text="Reset"
-        android:textAllCaps="false" />
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/resetButton"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="4dp"
-        android:text="Save"
-        android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/resetTimeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_reset"/>
+
+        <ImageView
+            android:id="@+id/startStopTimeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_start" />
+
+        <ImageView
+            android:id="@+id/saveTimeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_save" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/printButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/saveButton"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="4dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
         android:text="Print"
         android:textAllCaps="false" />
 
@@ -81,24 +84,19 @@
         android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/printButton"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="4dp"
-        android:textAllCaps="false" />
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="Name: "
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/nameAgeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nameTextView"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="4dp"
-        android:textAllCaps="false" />
-
-</RelativeLayout>
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="Age: "
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+</LinearLayout>
