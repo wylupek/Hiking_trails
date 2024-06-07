@@ -15,7 +15,6 @@ class StagesAdapter(private val stages: List<String>,
     }
 
     override fun onBindViewHolder(holder: StagesViewHolder, position: Int) {
-        val stage = stages[position]
         holder.bind(stages[position], distances[position], holder.itemView.context)
     }
 

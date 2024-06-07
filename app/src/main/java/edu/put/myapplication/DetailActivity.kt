@@ -1,10 +1,7 @@
 package edu.put.myapplication
 
 import RecyclerViewItemDecoration
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -18,7 +15,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var detector: GestureDetector
     private var trailId = 0
-    private var button_state = 1
+    private var buttonState = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,31 +28,30 @@ class DetailActivity : AppCompatActivity() {
         drawTrailView(trail)
 
         binding.detailItem.paceButton.setOnClickListener() {
-            when (button_state) {
+            when (buttonState) {
                 0 -> {
                     binding.detailItem.paceButton.setText(R.string.pace_slow);
                     binding.detailItem.paceButton.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.green_500)
                     PACE = "Slow"
-                    drawStagesView(trailList[trailId])
-                    button_state = 1
+                    drawStagesView(trailList[trailId], false)
+                    buttonState = 1
                 }
                 1 -> {
                     binding.detailItem.paceButton.setText(R.string.pace_average);
                     binding.detailItem.paceButton.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.green_500)
                     PACE = "Average"
-                    drawStagesView(trailList[trailId])
-                    button_state = 2
+                    drawStagesView(trailList[trailId], false)
+                    buttonState = 2
                 }
                 2 -> {
                     binding.detailItem.paceButton.setText(R.string.pace_fast);
                     binding.detailItem.paceButton.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.green_500)
                     PACE = "Fast"
-                    drawStagesView(trailList[trailId])
-                    button_state = 0
+                    drawStagesView(trailList[trailId], false)
+                    buttonState = 0
                 }
             }
         }
-
 
         binding.swipeLeft.setOnClickListener {
             if(trailId > 0) {
@@ -84,7 +80,6 @@ class DetailActivity : AppCompatActivity() {
         } else {
             return super.onTouchEvent(event)
         }
-
     }
     private fun findNextTrailId(currentId: Int): Int? {
         val category = intent.getStringExtra(PARENT)
@@ -125,40 +120,68 @@ class DetailActivity : AppCompatActivity() {
         return detector.onTouchEvent(ev)
     }
 
-    private fun drawStagesView(trail: Trail) {
+    private fun drawStagesView(trail: Trail, initial: Boolean) {
         val stagesAdapter = StagesAdapter(trail.stages, trail.distances)
         binding.detailItem.stages.adapter = stagesAdapter
         binding.detailItem.stages.addItemDecoration(RecyclerViewItemDecoration(this, R.drawable.divider))
         binding.detailItem.stages.layoutManager = LinearLayoutManager(this)
 
-        // Initialize the header view and dropdown icon
-        val stagesHeader = binding.detailItem.stagesHeader
-        val dropdownIcon = binding.detailItem.dropdownIcon
+        if (!initial) { return }
 
-        // Initially, set the RecyclerView to be gone
+        val stagesHeader = binding.detailItem.stagesHeader
+        val dropdownIcon = binding.detailItem.dropdownIconStages
         binding.detailItem.stages.visibility = View.GONE
 
-        // Set OnClickListener to the stagesHeader to toggle visibility
         stagesHeader.setOnClickListener {
-            // Toggle visibility of the stages RecyclerView
             if (binding.detailItem.stages.visibility == View.VISIBLE) {
-                // If RecyclerView is visible, hide it and change the icon to down arrow
                 binding.detailItem.stages.visibility = View.GONE
                 dropdownIcon.setImageResource(R.drawable.ic_arrow_down)
             } else {
-                // If RecyclerView is not visible, show it and change the icon to up arrow
                 binding.detailItem.stages.visibility = View.VISIBLE
                 dropdownIcon.setImageResource(R.drawable.ic_arrow_up)
             }
         }
     }
+
+    private fun drawTimesView(trail: Trail) {
+        val db = DBHelper(this, null)
+        val cursor = db.getTimes(trail.name)
+        cursor?.moveToFirst()
+        val stagesAdapter = TimesAdapter(this, cursor)
+        binding.detailItem.times.adapter = stagesAdapter
+        binding.detailItem.times.addItemDecoration(RecyclerViewItemDecoration(this, R.drawable.divider))
+        binding.detailItem.times.layoutManager = LinearLayoutManager(this)
+
+        if (cursor?.moveToFirst() == null) {
+            binding.detailItem.timesHeader.visibility = View.GONE
+            return
+        }
+
+        binding.detailItem.timesHeader.visibility = View.VISIBLE
+
+        val stagesHeader = binding.detailItem.timesHeader
+        val dropdownIcon = binding.detailItem.dropdownIconTimes
+        binding.detailItem.times.visibility = View.GONE
+
+        stagesHeader.setOnClickListener {
+            if (binding.detailItem.times.visibility == View.VISIBLE) {
+                binding.detailItem.times.visibility = View.GONE
+                dropdownIcon.setImageResource(R.drawable.ic_arrow_down)
+            } else {
+                binding.detailItem.times.visibility = View.VISIBLE
+                dropdownIcon.setImageResource(R.drawable.ic_arrow_up)
+            }
+        }
+    }
+
     private fun drawTrailView(trail: Trail) {
         binding.detailItem.toolbar.title = trail.difficulty
         binding.detailItem.trailImg.setImageResource(trail.imgId)
         binding.detailItem.trailName.text = trail.name
         binding.detailItem.description.text = trail.description
         binding.detailItem.paceButton.text = PACE;
-        drawStagesView(trail)
+        drawStagesView(trail, true)
+        drawTimesView(trail)
     }
 
     inner class GestureListener : GestureDetector.SimpleOnGestureListener() {

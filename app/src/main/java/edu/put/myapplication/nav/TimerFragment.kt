@@ -41,7 +41,6 @@ class TimerFragment : Fragment() {
             val selectedTrailName = parent.getItemAtPosition(position) as String
             selectedTrail = trailList.first { it.name == selectedTrailName }
         }
-
         return binding.root
     }
 
@@ -57,11 +56,9 @@ class TimerFragment : Fragment() {
             binding.elapsedTimeTextView.text = String.format("%02d:%02d:%02d", hours, minutes, seconds)
         }
 
-
         binding.startStopTimeButton.setOnClickListener {
             toggleStartStop()
         }
-
 
         binding.resetTimeButton.setOnClickListener {
             timerViewModel.resetTimer()
@@ -76,38 +73,14 @@ class TimerFragment : Fragment() {
             val time = binding.elapsedTimeTextView.text.toString()
             if (::selectedTrail.isInitialized) {
                 db.addTime(selectedTrail.name, time)
+                if (startStopState == 0) {
+                    toggleStartStop()
+                }
+                timerViewModel.resetTimer()
                 Toast.makeText(requireContext(), "${selectedTrail.name} added to database", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(requireContext(), "Select trail before you save the time!", Toast.LENGTH_LONG).show()
             }
-        }
-        binding.printButton.setOnClickListener{
-
-            // creating a DBHelper class
-            // and passing context to it
-            val db = DBHelper(requireContext(), null)
-
-            // below is the variable for cursor
-            // we have called method to get
-            // all names from our database
-            // and add to name text view
-            val cursor = db.getName()
-
-            // moving the cursor to first position and
-            // appending value in the text view
-            cursor!!.moveToFirst()
-            binding.nameTextView.append(cursor.getString(cursor.getColumnIndex(DBHelper.NAME_COl)) + "\n")
-            binding.nameAgeView.append(cursor.getString(cursor.getColumnIndex(DBHelper.TIME_COL)) + "\n")
-
-            // moving our cursor to next
-            // position and appending values
-            while(cursor.moveToNext()){
-                binding.nameTextView.append(cursor.getString(cursor.getColumnIndex(DBHelper.NAME_COl)) + "\n")
-                binding.nameAgeView.append(cursor.getString(cursor.getColumnIndex(DBHelper.TIME_COL)) + "\n")
-            }
-
-            // at last we close our cursor
-            cursor.close()
         }
     }
 
