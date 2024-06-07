@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -129,6 +130,27 @@ class DetailActivity : AppCompatActivity() {
         binding.detailItem.stages.adapter = stagesAdapter
         binding.detailItem.stages.addItemDecoration(RecyclerViewItemDecoration(this, R.drawable.divider))
         binding.detailItem.stages.layoutManager = LinearLayoutManager(this)
+
+        // Initialize the header view and dropdown icon
+        val stagesHeader = binding.detailItem.stagesHeader
+        val dropdownIcon = binding.detailItem.dropdownIcon
+
+        // Initially, set the RecyclerView to be gone
+        binding.detailItem.stages.visibility = View.GONE
+
+        // Set OnClickListener to the stagesHeader to toggle visibility
+        stagesHeader.setOnClickListener {
+            // Toggle visibility of the stages RecyclerView
+            if (binding.detailItem.stages.visibility == View.VISIBLE) {
+                // If RecyclerView is visible, hide it and change the icon to down arrow
+                binding.detailItem.stages.visibility = View.GONE
+                dropdownIcon.setImageResource(R.drawable.ic_arrow_down)
+            } else {
+                // If RecyclerView is not visible, show it and change the icon to up arrow
+                binding.detailItem.stages.visibility = View.VISIBLE
+                dropdownIcon.setImageResource(R.drawable.ic_arrow_up)
+            }
+        }
     }
     private fun drawTrailView(trail: Trail) {
         binding.detailItem.toolbar.title = trail.difficulty
