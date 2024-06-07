@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        val navView: NavigationView = binding.navViewItems
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -89,6 +89,3 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
-// TODO
-// 1. Wersja na tablet
-//    https://www.youtube.com/watch?v=ahYUZ374j2k

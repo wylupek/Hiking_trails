@@ -20,8 +20,17 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer">
+        app:headerLayout="@layout/nav_header_main">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/activity_main_drawer"
+            android:fitsSystemWindows="true"
+            android:layout_marginTop="170dp"
+            android:layout_marginBottom="50dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,11 +42,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dark_mode"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                android:gravity="bottom"/>
         </LinearLayout>
-
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
